@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+ <html>
+      <head>
+        <meta charset="utf-8"/>
+        <meta http-http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+          <!-- bootstrap & jquery -->
+
+          <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+          <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+
+            <script src = "scripts.js"></script>
+      </head>
+      <body>
+        <br></br>
+        <div class="container"></br>
+          <h3 align="center"> Students.js </h3> </br>
+          <table id="data-table" class="table table-bordered stripe">
+            <thead>
+              <tr>
+                <th> Id </th>
+                <th> FirstName</th>
+                <th> LastName</th>
+                <th> Email</th>
+                <th> Program</th>
+                <th> GPA</th>
+                <th> YearOfStudy</th>
+                <th> Supervisor</th>
+                <th> HireStatus</th>
+                <th> MailingAddress1</th>
+                <th> MailingAddress2</th>
+                <th> City</th>
+                <th> Province</th>
+                <th> Country</th>
+
+              </tr>
+            <thead>
+            </table>
+</div>
+
+<script>
+//way of openening files and making HTTP Requests
+var request = new XMLHttpRequest();
+//opens a new connection
+request.open('GET', 'http://localhost:7000/users', true)
+request.onload = function() {
+  var data = JSON.parse(this.response)
+  loadTable(data);
+}
+function loadTable(userData){
+  $('#data-table').DataTable( {
+    data: userData,
+    columns: [
+        { data: 'Id' },
+        { data: 'FirstName' },
+        { data: 'LastName' },
+         { data: 'Email' },
+          { data: 'Program' },
+           { data: 'GPA' },
+            { data: 'YearOfStudy' },
+             { data: 'Supervisor' },
+              { data: 'HireStatus' },
+               { data: 'MailingAddress1' },
+               { data: 'MailingAddress2' },
+               { data: 'City' },
+               { data: 'Province' },
+               { data: 'Country' }
+              
+
+    ]
+} );
+}
+request.send()
+</script>
+      </body>
+ </html>
