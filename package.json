@@ -1,0 +1,19 @@
+{
+  "name": "restapi-getpost",
+  "version": "1.0.0",
+  "description": "Learning RESTAPI-node-getpost",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taniasharma98/restapi-getpost.git"
+  },
+  "author": "Tania Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taniasharma98/restapi-getpost/issues"
+  },
+  "homepage": "https://github.com/taniasharma98/restapi-getpost#readme"
+}
